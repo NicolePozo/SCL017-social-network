@@ -17,10 +17,30 @@ body {
   background-size: cover;
   height: 65vh;
   width: 58vh;
+  display: flex;
   margin: 0% auto;
+  grid-area:gif;
 }
 
+.containerIntro{
+  display: grid;
+  grid-row-gap: 30px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  grid-template-areas: 'gif'
+                       'divTextIntro'
+                       'divButtonIntro'
+                       'footerIntro';
+  grid-gap: 10px;
+
+}
+
+/*dando nombres de grid area */
+
+
 #divTextIntro {
+  /*
   display: flex;
   font-family: 'Handlee', cursive, bold;
   font-size: 18px;
@@ -28,20 +48,31 @@ body {
   width: 86%;
   background-color: transparent;
   margin-top: 3vh;
-  margin-right: 5%;
+  margin-right: 5%;*/
+  background-color: blueviolet;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  grid-area: divTextIntro;
+
 }
 
 #divButtonIntro {
-  display: flex;
+  /* display: flex;
   position: relative;
   width: 50%;
   background-color: transparent;
   margin-top: 7%;
   margin-right: 10%;
-  float: right;
-}
+  float: right; */
+  background-color: blue;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  grid-area: divButtonIntro;
+} 
 
-#buttonIntro {
+#divButtonIntro > button{
   background-color: rgba(214, 190, 180, 0.83);
   height: 5vh;
   width: 20vh;
@@ -51,13 +82,38 @@ body {
   margin-top: -5%;
   box-shadow: 0 2px 15px rgba(80, 77, 78, 0.5);
   border-style: double;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
+/*#buttonIntro {
+  /*background-color: rgba(214, 190, 180, 0.83);
+  height: 5vh;
+  width: 20vh;
+  border-radius: 4px;
+  font-family: 'Handlee', cursive;
+  margin-left: -10%;
+  margin-top: -5%;
+  box-shadow: 0 2px 15px rgba(80, 77, 78, 0.5);
+  border-style: double;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  grid-area: buttonIntro;
+}*/
+
 #footerIntro {
-  clear: both;
+ /* clear: both;
   position: relative;
   height: 200px;
-  margin-top: 15vh;
+  margin-top: 15vh;*/
+  background-color: aqua;
+  justify-content:center;
+  align-items: center;
+  text-align: center;
+  height: 20px;
+  grid-area: footerIntro;
 }
 
 /*signUp*/
@@ -238,4 +294,30 @@ body {
   font-family: 'Handlee', cursive;
   font-size: 15px;
   justify-content: center;
+}
+
+@media (min-width:400px) {
+
+ .containerIntro{
+   grid-template-areas:'gif gif         .           .' 
+                       'gif gif    divTextIntro divTextIntro'
+                       'gif gif    divTextIntro divTextIntro'
+                       'gif gif    divButtonIntro divButtonIntro'
+                       'footer footer footer footer';
+                       
+ }
+  
+ #divGif {
+  background: url('https://i.picasion.com/pic91/a84f3fcf776556e023735827dfd8fd51.gif') no-repeat center;
+  background-size: cover;
+  height: 12.5rem;
+  width: 12.5rem;
+  display: flex;
+  grid-area:gif;
+}
+
+#divTextIntro {
+  font-size: 28px;
+}
+
 }
