@@ -296,6 +296,107 @@ body {
   justify-content: center;
 }
 
+/*Main Menu*/ 
+
+#boxKnittingSticks {
+  background-color: teal;
+  justify-content: center;
+  width: 33vh;
+  height: 29vh;
+  margin-top: 6vh;
+  margin-left: 35%;
+  border-radius: 5px;
+}
+
+#boxSticksImg {
+  background: url(./lib/assets/sticks.png) no-repeat center;
+  width: 30vh;
+  height: 30vh;
+  margin-top: -46%;
+  border-radius: 5%;
+}
+
+#boxCrochet {
+  background-color: violet;
+  justify-content: center;
+  width: 33vh;
+  height: 29vh;
+  margin-top: 6vh;
+  margin-left: 35%;
+  border-radius: 5px;
+}
+
+#boxCrochetImg {
+  background: url(./lib/assets/crochet.png) no-repeat center;
+  width: 30vh;
+  height: 30vh;
+  margin-top: -46%;
+  border-radius: 5%;
+}
+#boxSticksText {
+  width: 28%;
+  height: 8%;
+  font-family: "Handlee", cursive;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: white;
+  position: absolute;
+  margin-top: -22vh;
+  border-radius: 5px;
+  opacity: 0.5;
+}
+
+#boxCrochetText {
+  width: 28%;
+  height: 8%;
+  font-family: "Handlee", cursive;
+  font-weight: bold;
+  font-size: 18px;
+  background-color: white;
+  position: absolute;
+  margin-top: -22vh;
+  border-radius: 5px;
+  opacity: 0.5;
+}
+
+#containerMainMenu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  position: absolute;
+  width: 294px;
+  height: 390px;
+  background: rgba(255, 252, 252, 0.48);
+  margin-top: 22vh;
+  margin-left: 5%;
+}
+
+/* items */
+
+#oxKnittingSticks-1 {
+  background-color: teal;
+  justify-content: center;
+  width: 33vh;
+  height: 29vh;
+  margin-top: 6vh;
+  margin-left: 35%;
+  border-radius: 5px;
+}
+
+/* specific item styles */
+
+#headerMainMenu {
+  background: #4464a1;
+  /* display: grid; */
+  transform: rotate(-90deg);
+  height: 14vh;
+  width: 69vh;
+  margin-top: 20vh;
+  font-family: "Handlee", cursive;
+  font-size: 30px;
+  margin-left: 67vh;
+}
+
 @media (min-width:400px) {
 
  .containerIntro{
@@ -319,5 +420,6 @@ body {
 #divTextIntro {
   font-size: 28px;
 }
+
 
 }
