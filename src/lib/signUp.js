@@ -16,6 +16,11 @@ export const signUpView = () => {
   inputEmailUp.setAttribute('type', 'email');
   inputEmailUp.setAttribute('placeholder', 'Correo electrónico');
   mainUp.appendChild(inputEmailUp);
+  /*const imgUp=document.createElement("img");
+  imgUp.setAttribute("id", "imgUp");
+  imgUp.src="./lib/assets/palillohombre.jpg";
+  mainUp.appendChild(imgUp);*/
+
   const inputPasswordUp = document.createElement('input');
   inputPasswordUp.setAttribute('id', 'passwordUp');
   inputPasswordUp.setAttribute('type', 'password');
@@ -44,6 +49,10 @@ export const signUpView = () => {
   buttonToGoogleUp.addEventListener('click', googleAccess);
   mainUp.appendChild(buttonToGoogleUp);
   containerUp.appendChild(mainUp);
+  const imgUp=document.createElement("img");
+  imgUp.setAttribute("id", "imgUp");
+  imgUp.src="./lib/assets/palillohombre.jpg";
+  containerUp.appendChild(imgUp);
   const footerUp = document.createElement('footer');
   footerUp.setAttribute('id', 'footerUp');
   footerUp.innerHTML = 'Derechos reservados @Tejer&Punto';
