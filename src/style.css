@@ -548,6 +548,21 @@ grid-area: main;
 #boxCrochet{
   margin-left:7vh;
 }
+
+@media only screen and (min-width: 64.063em) {
+  body {
+    background-color: green;
+  }
+} 
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  body {
+    background-color: blue;
+  }
+  
+} /* min-width 641px and max-width 1024px */
+
+
 /*Pantallas grandes (desktops de menos de 1200px)*/
 @media (max-width: 1199.98px) { 
 
@@ -555,7 +570,7 @@ grid-area: main;
 
 /*Pantallas medianas (tablets de menos de 992px)*/
 @media (max-width: 991.98px) { 
-  
+
  }
 
 
