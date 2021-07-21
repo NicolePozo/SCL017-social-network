@@ -1,5 +1,6 @@
-import { createUser } from './signUpLogic.js';
-import { googleAccess } from './googleSignIn.js';
+import { createUser } from '../logic/signUpLogic.js';
+import { googleAccess } from '../logic/googleSignIn.js';
+import { checkEmailValidity } from '../logic/checkEmail.js';
 
 export const signUpView = () => {
   const containerUp = document.createElement('div');
@@ -11,21 +12,26 @@ export const signUpView = () => {
   headerUp.appendChild(titleUp);
   containerUp.appendChild(headerUp);
   const mainUp = document.createElement('main');
+  const formUp = document.createElement('form');
+  formUp.setAttribute('id', 'formUp');
   const inputEmailUp = document.createElement('input');
   inputEmailUp.setAttribute('id', 'emailUp');
+  inputEmailUp.setAttribute('class', 'emails');
   inputEmailUp.setAttribute('type', 'email');
   inputEmailUp.setAttribute('placeholder', 'Correo electrónico');
-  mainUp.appendChild(inputEmailUp);
+  inputEmailUp.addEventListener('input', checkEmailValidity);
+  formUp.appendChild(inputEmailUp);
   const inputPasswordUp = document.createElement('input');
   inputPasswordUp.setAttribute('id', 'passwordUp');
   inputPasswordUp.setAttribute('type', 'password');
   inputPasswordUp.setAttribute('placeholder', 'Contraseña');
-  mainUp.appendChild(inputPasswordUp);
+  formUp.appendChild(inputPasswordUp);
   const buttonCreateUser = document.createElement('button');
   buttonCreateUser.innerHTML = 'Regístrate';
   buttonCreateUser.setAttribute('id', 'buttonCreateUser');
   buttonCreateUser.addEventListener('click', createUser);
-  mainUp.appendChild(buttonCreateUser);
+  formUp.appendChild(buttonCreateUser);
+  mainUp.appendChild(formUp);
   const termsText = document.createElement('p');
   termsText.innerHTML = 'Al registrarte, aceptas las <a href="">Condiciones</a> de Tejer & Punto.';
   termsText.setAttribute('id', 'termsText');

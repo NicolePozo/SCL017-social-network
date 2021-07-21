@@ -1,5 +1,6 @@
-import { loginUser } from './signInLogic.js';
-import { googleAccess } from './googleSignIn.js';
+import { loginUser } from '../logic/signInLogic.js';
+import { googleAccess } from '../logic/googleSignIn.js';
+import { checkEmailValidity } from '../logic/checkEmail.js';
 
 export const signInView = () => {
   const containerIn = document.createElement('div');
@@ -11,21 +12,26 @@ export const signInView = () => {
   headerIn.appendChild(titleIn);
   containerIn.appendChild(headerIn);
   const mainIn = document.createElement('main');
+  const formIn = document.createElement('form');
+  formIn.setAttribute('id', 'formIn');
   const inputEmailIn = document.createElement('input');
   inputEmailIn.setAttribute('id', 'emailIn');
+  inputEmailIn.setAttribute('class', 'emails');
   inputEmailIn.setAttribute('type', 'email');
   inputEmailIn.setAttribute('placeholder', 'Correo electrónico');
-  mainIn.appendChild(inputEmailIn);
+  inputEmailIn.addEventListener('input', checkEmailValidity);
+  formIn.appendChild(inputEmailIn);
   const inputPasswordIn = document.createElement('input');
   inputPasswordIn.setAttribute('id', 'passwordIn');
   inputPasswordIn.setAttribute('type', 'password');
   inputPasswordIn.setAttribute('placeholder', 'Contraseña');
-  mainIn.appendChild(inputPasswordIn);
+  formIn.appendChild(inputPasswordIn);
   const buttonLoginUser = document.createElement('button');
   buttonLoginUser.innerHTML = 'Inicia sesión';
   buttonLoginUser.setAttribute('id', 'buttonLoginUser');
   buttonLoginUser.addEventListener('click', loginUser);
-  mainIn.appendChild(buttonLoginUser);
+  formIn.appendChild(buttonLoginUser);
+  mainIn.appendChild(formIn);
   const separationTextIn = document.createElement('p');
   separationTextIn.innerHTML = '- o -';
   separationTextIn.setAttribute('id', 'separationTextIn');
@@ -35,6 +41,12 @@ export const signInView = () => {
   buttonToGoogleIn.setAttribute('id', 'buttonToGoogleIn');
   buttonToGoogleIn.addEventListener('click', googleAccess);
   mainIn.appendChild(buttonToGoogleIn);
+  const divImgIn = document.createElement('div');
+  divImgIn.setAttribute('id','divImgIn');
+  const imgIn = document.createElement('img');
+  imgIn.setAttribute('id', 'imgIn');
+  divImgIn.appendChild(imgIn);
+  containerIn.appendChild(divImgIn);
   const sendToSignUpText = document.createElement('p');
   sendToSignUpText.innerHTML = '¿No tienes una cuenta? <a href="#/signup">Regístrate</a>.';
   sendToSignUpText.setAttribute('id', 'sendToSignUpText');
